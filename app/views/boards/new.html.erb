@@ -1,2 +1,9 @@
-<h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+<h1>Add Board</h1>
+<%= form_for @board do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br /> 
+  <%= f.submit %>
+<% end %>
+
+

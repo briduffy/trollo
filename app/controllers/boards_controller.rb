@@ -16,17 +16,27 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
     if @board.dave
-      redirect_to 
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
-
+    
   end
 
   def update
+    if @board.update(board_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @board.destroy
+    redirect_to root_path
   end
 
   private
