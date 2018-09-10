@@ -9,9 +9,9 @@ RSpec.describe List, type: :model do
     end
   end
 
-
   describe 'associations' do
     it { should belong_to :board }
     it { should have_many :tasks }
   end
+  
 end
