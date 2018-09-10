@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'abilities' do
+  it 'puts a task under a list' do
+    name = 'Clean'
+    task = Task.create(name: name)
+    expect(task.name).to eq(name)
+end
+end
 end
