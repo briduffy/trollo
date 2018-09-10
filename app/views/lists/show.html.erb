@@ -2,11 +2,6 @@
 <p>Find me in app/views/lists/show.html.erb</p>
 
 
-<h1><%= @board.name %> - <%= @list.name %></h1>
-<h2>Tasks</h2>
 
-<% @list.task.each do |task| %>
-  <%= render 'tasks/task', { task: task} %>
-<% end %>
 
 
