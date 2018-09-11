@@ -1,13 +1,9 @@
 class ListsController < ApplicationController
   before_action :set_board
-<<<<<<< HEAD
-  before_action :set_list, only[:show, :edit, :update, :destroy, :upgrade_priority, :downgrade_priority]
-=======
   before_action :set_list, only: [:show, :edit, :update, :destroy, :upgrade_priority, :downgrade_priority]
->>>>>>> spell check
   
   def index
-    @lists = @board.list
+    @lists = @board.lists
   end
 
   def show
@@ -75,7 +71,7 @@ end
     end
 
     def set_list
-      @list = @board.lists.find(param[:id])
+      @list = List.find(param[:id])
     end
 
     def list_params
