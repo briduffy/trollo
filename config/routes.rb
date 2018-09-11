@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :lists
  end
 
- scope 'lists/:list_id', as 'list' do
-  resources :tasks, only: [:new, :create]
+ resources :lists do
+  resources :tasks
  end
  
 end
