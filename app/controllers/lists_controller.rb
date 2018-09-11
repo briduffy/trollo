@@ -71,7 +71,7 @@ end
     end
 
     def set_list
-      @list = List.find(param[:id])
+      @list = List.find(params[:id])
     end
 
     def list_params
