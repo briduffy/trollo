@@ -1,4 +1,3 @@
-
 class ListsController < ApplicationController
   before_action :set_board
   before_action :set_list, only: [:show, :edit, :update, :destroy]
@@ -13,7 +12,7 @@ class ListsController < ApplicationController
   def new
     #@list = Board.lists.new(list_params)
     @list = List.new
-  
+    render partial: "form"
   end
 
   def create
@@ -29,7 +28,7 @@ class ListsController < ApplicationController
   end
 
   def edit
-
+    render partial: "form"
   end
 
   def update
