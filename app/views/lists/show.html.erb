@@ -1,5 +1,10 @@
 <h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+
+<% @list.tasks.each do |task| %>
+  <%= render 'tasks/task', { task: task } %>
+<% end %>
+
+<%= link_to 'Add Task', new_list_task_path(@list) %>
 
 
 
