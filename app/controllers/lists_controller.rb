@@ -48,6 +48,7 @@ class ListsController < ApplicationController
       else 
         redirect to board_list_path(@board, @list)
       end
+    end
       # if nothing needs to happen stay on the page?
     redirect_to board_path(@board)
   end
