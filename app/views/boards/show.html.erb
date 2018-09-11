@@ -1,10 +1,17 @@
 <h1><%= @board.name %></h1>
-
-<%= link_to 'New List ', new_board_list_path(@board) %>
-
+<h5><u><%= link_to 'New List ', new_board_list_path(@board) %></u></h5>
+<ul>
+<li>
+<%= link_to 'Edit -', edit_board_path(@board.id) %>
+<%= link_to 'Delete', board_path(@board.id), method: :delete %></li>
+</ul>
+<hr />
 <ul>
   <% @board.lists.each do |list| %>
-    <li><%= link_to list.name, [@board, list] %></li>
+    <li>
+    <h5><%= link_to list.name, [@board, list] %></h5>
+
+    </li>
   <% end %>
 </ul>
 

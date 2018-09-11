@@ -1,2 +1,13 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<div class"container">
+  <h1><%= @board.name%></h1>
+  <hr />
+
+  <h3>Add List</h3>
+  <%= form_for [@board, @list] do |f| %>
+    <%= f.label :input %>
+    <%= f.text_field :name, required: true, autofocus: true %>
+    <br /> 
+    <%= f.submit %>
+  <% end %>      
+</div>
+

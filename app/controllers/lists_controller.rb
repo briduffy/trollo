@@ -13,7 +13,7 @@ class ListsController < ApplicationController
   def new
     #@list = Board.lists.new(list_params)
     @list = List.new
-    render partial: "form"
+  
   end
 
   def create

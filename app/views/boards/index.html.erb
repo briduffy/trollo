@@ -4,9 +4,7 @@
 <ul>
     <% @boards.each do |board| %>
         <li>
-         <%= link_to board.name, board_path(board.id) %>
-         <%= link_to '- Edit -', edit_board_path(board.id) %>
-         <%= link_to 'Delete', board_path(board.id), method: :delete %>
+         <h5><%= link_to board.name, board_path(board.id) %></h5>
         </li>
         <% end %>
 </ul>

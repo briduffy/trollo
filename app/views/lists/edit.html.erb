@@ -1,11 +1,10 @@
 <div class"container">
   <h1><%= @board.name%></h1>
-  <h2><%= @list.id ? 'Edit' : 'Create' %></h2>
   <hr />
 
-  <h3>Add List</h3>
-  <%= form_for @list do |f| %>
-    <%= f.label :List %>
+  <h3>Edit List</h3>
+  <%= form_for [@board, @list] do |f| %>
+    <%= f.label :input %>
     <%= f.text_field :name, required: true, autofocus: true %>
     <br /> 
     <%= f.submit %>
