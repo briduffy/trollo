@@ -1,0 +1,21 @@
+<div class="container">
+  <h1><%= @board.name%></h1>
+  <h2><%= @list.id ? 'Edit' : 'Create' %></h2>
+  <hr />
+
+ <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <%= form_for [@board, @list] do |f| %>
+            <%= f.label :List  %>
+            <%= f.text_field :name, required: true, autofocus: true %>
+            <br />
+            <%= f.submit 'Add List', :class => 'waves-effect waves-light btn-large'%>
+          <% end %>
+        </div>
+      </div>
+    </form>
+  </div>
+        
