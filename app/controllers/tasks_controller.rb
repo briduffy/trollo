@@ -6,7 +6,10 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-
+def destroy
+  @task.destroy
+  redirect_to board_list_path(@list.board_id, @list)
+end
   def create
 
     @task = @list.tasks.new(task_params)

@@ -2,6 +2,7 @@
 
 <% @list.tasks.each do |task| %>
   <%= render 'tasks/task', { task: task } %>
+  <%= link_to 'Delete', board_list_path(@list.board_id, @list), method: :delete %>
 <% end %>
 <hr />
 <%= link_to 'Add Task', new_list_task_path(@list) %>
