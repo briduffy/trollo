@@ -48,7 +48,7 @@ class ListsController < ApplicationController
     #  if list.priority > destroyed.priority
     #    list.priority = list.priority - 1
       if 
-        redirect to board_path(@board, @list)
+        redirect to board_path(@board, list)
       else
       # if nothing needs to happen stay on the page?
         redirect_to board_path(@board)
