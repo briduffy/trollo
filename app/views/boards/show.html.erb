@@ -1,2 +1,7 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1><%= @board.name %></h1>
+
+<ul>
+  <% @board.lists.each do |list| %>
+    <li><%= link_to list.name, [@board, list] %></li>
+  <% end %>
+</ul>

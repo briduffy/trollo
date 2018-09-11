@@ -1,11 +1,11 @@
 <h1>Board List</h1>
-<%= link_to 'New Board', new_board_path %>
+
 
 <ul>
     <% @boards.each do |board| %>
         <li>
          <%= link_to board.name, board_path(board.id) %>
-         <%= link_to 'Edit', edit_board_path(board.id) %>
+         <%= link_to '- Edit -', edit_board_path(board.id) %>
          <%= link_to 'Delete', board_path(board.id), method: :delete %>
         </li>
         <% end %>
