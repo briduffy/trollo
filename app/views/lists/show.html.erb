@@ -1,4 +1,4 @@
-<h1>Lists#show</h1>
+<h1><%= @list.name %></h1>
 
 <% @list.tasks.each do |task| %>
   <%= render 'tasks/task', { task: task } %>

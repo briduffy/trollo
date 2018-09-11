@@ -8,5 +8,7 @@ Rails.application.routes.draw do
  scope 'lists/:list_id', as: 'list' do
   resources :tasks
  end
+
  
+
 end
