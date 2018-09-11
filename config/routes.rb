@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :lists
  end
 
- resources :lists do
+ scope 'lists/:list_id', as: 'list' do
   resources :tasks
  end
  

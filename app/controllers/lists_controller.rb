@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :set_board
-  before_action :set_list, only: [:show, :edit, :update, :destroy, :upgrade_priority, :downgrade_priority]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
   
   def index
     @lists = @board.lists
@@ -10,17 +10,18 @@ class ListsController < ApplicationController
   end
 
   def new
+    #@list = Board.lists.new(list_params)
     @list = List.new
     render partial: "form"
   end
 
   def create
-    priority_when_added(@board)
+    # List.priority_when_added(@board)
 
-    #@list = @board.list.new(list_params)
+    @list = @board.lists.new(list_params)
 
     if @list.save
-      redirect to board_list_path(@board, @list)
+      redirect_to board_path(@board)
     else
       render :new
     end
@@ -32,7 +33,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to board_list_path(@board, @list)
+      redirect_to board_path(@board)
     else
       render :edit
     end
@@ -40,30 +41,35 @@ class ListsController < ApplicationController
 
   # when destroyed, check to see if the priority of the list is greater than the one deleted.
   # if yes, loop through and -1 from the priority of all items there after.
+
   def destroy
     @list.destroy
-    @board.lists.each do |list|
-      if list.priority > destroyed.priority
-        list.priority = list.priority - 1
-      else 
-        redirect to board_list_path(@board, @list)
-      end
+    #@board.lists.each do |list|
+    #  if list.priority > destroyed.priority
+    #    list.priority = list.priority - 1
+      if 
+        redirect to board_path(@board, @list)
+      else
       # if nothing needs to happen stay on the page?
-    redirect_to board_path(@board)
-  end
-end
-
-  def upgrade_priority
-    list_down_priority = @board.lists.find_by(priority: @list.priority - 1)
-    @list.update(priority: list_down_priority.priority)
-    list_down_priority.update(priority: list_down_priority + 1)
+        redirect_to board_path(@board)
+      end 
   end
 
-  def downgrade_priority
-    list_down_priority = @board.lists.find_by(priority: @list.priority - 1)
-    @list.update(priority: list_down_priority.priority)
-    list_down_priority.update(priority: list_down_priority + 1)
-  end
+  #def upgrade_priority
+  #  list_down_priority = @board.lists.find_by(priority: @list.priority - 1)
+  #  @list.update(priority: list_down_priority.priority)
+  #  list_down_priority.update(priority: list_down_priority + 1)
+
+    #redirect path?
+  #end
+
+  #def downgrade_priority
+  #  list_down_priority = @board.lists.find_by(priority: @list.priority - 1)
+  #  @list.update(priority: list_down_priority.priority)
+  #  list_down_priority.update(priority: list_down_priority + 1)
+
+    #redirect path?
+  #end
 
   private
     def set_board
@@ -75,6 +81,6 @@ end
     end
 
     def list_params
-      params.require(:list).(:name)
+      params.require(:list).permit(:name)
     end
   end

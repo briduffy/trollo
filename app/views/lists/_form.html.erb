@@ -4,7 +4,7 @@
   <hr />
 
   <h3>Add List</h3>
-  <%= form_for @list do |f| %>
+  <%= form_for [@board, @list] do |f| %>
     <%= f.label :List %>
     <%= f.text_field :name, required: true, autofocus: true %>
     <br /> 
