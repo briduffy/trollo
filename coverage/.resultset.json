@@ -266,6 +266,7 @@
       "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/controllers/tasks_controller.rb": [
         1,
         1,
+        1,
         null,
         1,
         1,
@@ -273,6 +274,7 @@
         null,
         null,
         1,
+        null,
         0,
         0,
         0,
@@ -282,6 +284,10 @@
         null,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -351,6 +357,6 @@
         null
       ]
     },
-    "timestamp": 1536702655
+    "timestamp": 1536703320
   }
 }
