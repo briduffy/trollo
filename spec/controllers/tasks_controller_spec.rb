@@ -2,30 +2,22 @@ require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  let(:valid_attributes) {
+    { name: 'Chase'}
+  }
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
 
   describe "GET #new" do
     it "returns http success" do
-      get :new
+      list = List.create! valid_attributes
+      get :new, params: { list_id: list.id }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #edit" do
+  describe "GET #create" do
     it "returns http success" do
-      get :edit
+      get :create
       expect(response).to have_http_status(:success)
     end
   end
