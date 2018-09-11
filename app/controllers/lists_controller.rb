@@ -1,6 +1,10 @@
 class ListsController < ApplicationController
   before_action :set_board
+<<<<<<< HEAD
   before_action :set_list, only[:show, :edit, :update, :destroy, :upgrade_priority, :downgrade_priority]
+=======
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :upgrade_priority, :downgrade_priority]
+>>>>>>> spell check
   
   def index
     @lists = @board.list
@@ -48,10 +52,10 @@ class ListsController < ApplicationController
       else 
         redirect to board_list_path(@board, @list)
       end
-    end
       # if nothing needs to happen stay on the page?
     redirect_to board_path(@board)
   end
+end
 
   def upgrade_priority
     list_down_priority = @board.lists.find_by(priority: @list.priority - 1)
@@ -66,15 +70,15 @@ class ListsController < ApplicationController
   end
 
   private
-  def set_board
-    @board = Board.fin(params[:board_id])
-  end
+    def set_board
+     @board = Board.find(params[:board_id])
+    end
 
-  def set_list
-    @list = List.find(param[:id])
-  end
+    def set_list
+      @list = @board.lists.find(param[:id])
+    end
 
-  def list_params
-    params.require(:list).(:name)
+    def list_params
+      params.require(:list).(:name)
+    end
   end
-end
