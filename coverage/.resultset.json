@@ -268,7 +268,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -283,7 +283,7 @@
         null,
         1,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -293,6 +293,18 @@
         null
       ],
       "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/models/board.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
@@ -328,19 +340,17 @@
         null,
         null
       ],
-      "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/models/application_record.rb": [
+      "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/models/task.rb": [
         1,
         1,
-        null
-      ],
-      "/Users/dirkvancouver/Desktop/dpl/week5/trollo_lol/trollo/app/models/board.rb": [
+        null,
         1,
-        1,
-        1,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1536702170
+    "timestamp": 1536702655
   }
 }

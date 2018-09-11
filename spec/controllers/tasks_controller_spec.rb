@@ -6,10 +6,10 @@ RSpec.describe TasksController, type: :controller do
     { name: 'Chase'}
   }
 
-
   describe "GET #new" do
     it "returns http success" do
-      list = List.create! valid_attributes
+      board = Board.create! valid_attributes
+      list = board.lists.create! valid_attributes
       get :new, params: { list_id: list.id }
       expect(response).to have_http_status(:success)
     end
@@ -17,6 +17,8 @@ RSpec.describe TasksController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
+      board = Board.create! valid_attributes
+      list = board.lists.create! valid_attributes
       get :create
       expect(response).to have_http_status(:success)
     end
